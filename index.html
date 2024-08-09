@@ -2,75 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="/Users/miloolfindo/repos/rock-paper-scissors/rps.css">
     </head>
     <body>
-        <script>
-            //Get computer choice
-            function getComputerChoice(){
-                const choices = ["rock", "paper", "scissors"];
-                return choices[Math.floor(Math.random()*choices.length)];
-            }
-            
-            //Get user input
-            function getHumanChoice(){
-                let choice = prompt("Select rock, paper, or scissors.");
-                return choice;
-            }
-
-            //Play game up to 5
-            function playGame(){
-                let humanScore = 0;
-                let computerScore = 0;
-                //Start round
-                function playRound(humanChoice, computerChoice){
-                    let input = humanChoice.toLowerCase();
-                    //Rock cases
-                    if (input === "rock"){
-                        if(computerChoice === "paper"){
-                            computerScore++;
-                            console.log("You lose! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }else if(computerChoice === "scissors"){
-                            humanScore++;
-                            console.log("You win! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }else{
-                            console.log("It's a draw! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }
-                    } //Paper cases
-                    else if(input === "paper" ){
-                        if(computerChoice === "scissors"){
-                            computerScore++;
-                            console.log("You lose! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }else if(computerChoice === "rock"){
-                            humanScore++;
-                            console.log("You win! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }else{
-                            console.log("It's a draw! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }
-                    } //Scissors cases
-                    else if(input === "scissors"){
-                        if(computerChoice === "rock"){
-                            computerScore++;
-                            console.log("You lose! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }else if(computerChoice === "paper"){
-                            humanScore++;
-                            console.log("You win! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }else{
-                            console.log("It's a draw! " + "You: " + humanScore + " Computer: " + computerScore);
-                        }
-                    }//Input validation
-                    else{
-                        console.log("Invalid input.");
-                    }
-            }
-                //Game will not end until either user score or computer score gets to 5
-                while(humanScore < 5 && computerScore < 5){
-                    const humanSelection = getHumanChoice();
-                    const computerSelection = getComputerChoice();
-                    playRound(humanSelection, computerSelection);
-                }
-            }
-
-            playGame();
-        </script>
+        <div id="container">
+            <div>
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </div>
+            <div>
+                <h3>Choose your weapon.</h3>
+            </div>
+        </div>
+        <script src="/Users/miloolfindo/repos/rock-paper-scissors/rps.js"></script>
     </body>
 </html>
