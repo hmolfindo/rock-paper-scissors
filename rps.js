@@ -15,7 +15,8 @@ function playGame(){
     const rock = document.getElementById("rock");
     const paper = document.getElementById("paper");
     const scissors = document.getElementById("scissors");
-    const result = document.querySelector("h3");
+    const result = document.getElementById("commentator");
+    const score = document.getElementById("scoreboard");
 
     rock.addEventListener("click", function(){
         console.log("rock");
@@ -39,40 +40,54 @@ function playGame(){
             if (humanChoice === "rock"){
                 if(computerChoice === "paper"){
                     computerScore++;
-                    result.textContent = "You lose! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "You lose! Paper beats rock!";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }else if(computerChoice === "scissors"){
                     humanScore++;
-                    result.textContent = "You win! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "You win! Rock beats scissors! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }else{
-                    result.textContent = "It's a draw! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "It's a draw!";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }
             } //Paper cases
             else if(humanChoice === "paper" ){
                 if(computerChoice === "scissors"){
                     computerScore++;
-                    result.textContent = "You lose! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "You lose! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }else if(computerChoice === "rock"){
                     humanScore++;
-                    result.textContent = "You win! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "You win! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }else{
-                    result.textContent = "It's a draw! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "It's a draw! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }
             } //Scissors cases
             else if(humanChoice === "scissors"){
                 if(computerChoice === "rock"){
                     computerScore++;
-                    result.textContent = "You lose! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "You lose! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }else if(computerChoice === "paper"){
                     humanScore++;
-                    result.textContent = "You win! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "You win! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }else{
-                    result.textContent = "It's a draw! " + "You: " + humanScore + " Computer: " + computerScore;
+                    result.textContent = "It's a draw! ";
+                    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
                 }
             }
         }else{
-            let winner = '';
-            if(humanScore === 5) result.textContent = "You win!";
-            else result.textContent = "You lose!";
+            if(humanScore === 4){
+                result.textContent = "You've defeated the computer!";
+                score.textContent = "You: " + humanScore + " Computer: " + computerScore;
+            }
+            else{
+                result.textContent = "You've been defeated by the computer!";
+                score.textContent = "You: " + humanScore + " Computer: " + computerScore;
+            } 
 
         }
     }
