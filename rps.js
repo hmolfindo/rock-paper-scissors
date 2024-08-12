@@ -4,12 +4,6 @@ function getComputerChoice(){
     return choices[Math.floor(Math.random()*choices.length)];
 }
 
-/*//Get user input
-function getHumanChoice(){
-    let choice = prompt("Select rock, paper, or scissors.");
-    return choice;
-}*/
-
 //Play game up to 5
 function playGame(){
     const rock = document.getElementById("rock");
@@ -127,12 +121,6 @@ function playGame(){
             }
         }
     }
-        /*//Game will not end until either user score or computer score gets to 5
-        while(humanScore < 5 && computerScore < 5){
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
-            playRound(humanSelection, computerSelection);
-        }*/
 
 }
 
